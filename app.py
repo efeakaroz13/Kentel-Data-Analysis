@@ -22,7 +22,8 @@ def decrypt(text):
 
 
 
-
+value = CONF().value
+print(value)
 firebase = pyrebase.initialize_app(CONF().firebaseConfig)
 db = firebase.database()
 auth = firebase.auth()
@@ -83,7 +84,7 @@ def register():
             
             
         }
-        db.child("userdata").child(username).set(data)
+        db.child(value).child("userdata").child(username).update(data)
         try:
             auth.create_user_with_email_and_password(email,password)
         except:
