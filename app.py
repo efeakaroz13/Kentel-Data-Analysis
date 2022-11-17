@@ -66,6 +66,7 @@ def register():
         password = request.form.get("password")
         fullname = request.form.get("fullname")
         registrationtime = time.time()
+        email = email.lower()
         try:
             ipaddr = request.environ['HTTP_X_FORWARDED_FOR']
             if ipaddr == None:
@@ -82,7 +83,12 @@ def register():
             
             
         }
-
+        db.child("userdata").child(username).set(data)
+        try:
+            auth.create_user_with_email_and_password(email,password)
+        except:
+            return render_template("register.html",error=True)
+        return data
     if request.method == "GET":
         return render_template("register.html")
 

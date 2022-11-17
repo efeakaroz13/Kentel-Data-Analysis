@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Register - Kentel Data Analyser</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/everything.css">
+</head>
+<body>
+	<nav class="navbar " style="border-bottom:1px solid #e3e3e3;">
+	  <a class="navbar-brand" href="/">
+	    <img src="/static/alpha.png" style="margin-left:20px;margin-right: 20px;" width="30" height="30" class="d-inline-block align-top" alt="">
+	    Kentel Analytics
+	  </a>
+	</nav><br><br>
+	<div class="container">
+		<center>
+			{% if error==True%}
+			<div class="login">
+				<form action="" method="POST">
+					<input type="text" class="form-control" name="username" placeholder="What will your username be?"><br>
+					<input type="email" class="form-control" name="email" placeholder="Enter your email"><br>
+					<input type="password" class="form-control" name="password" placeholder="Decide your password"><br>
+					<input type="text" class="form-control" name="fullname" placeholder="One last question: What is your full name?"><br>
+					<button class="btn btn-outline-dark">Register</button>
+				</form>
+			</div>
+			<style type="text/css">
+				input{
+					border:1px solid red;
+				}
+			</style>
+			{% else %}
+			<h3 style="font-family: 'IBM Plex Sans JP', sans-serif;">SignUp</h3>
+			<div class="login">
+				<form action="" method="POST">
+					<input type="text" class="form-control" name="username" placeholder="What will your username be?"><br>
+					<input type="email" class="form-control" name="email" placeholder="Enter your email"><br>
+					<input type="password" class="form-control" name="password" placeholder="Decide your password"><br>
+					<input type="text" class="form-control" name="fullname" placeholder="One last question: What is your full name?"><br>
+					<button class="btn btn-outline-dark">Register</button>
+				</form>
+			</div>
+			{% endif %}	
+
+		</center>
+	</div>
+</body>
+</html>
