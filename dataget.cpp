@@ -9,16 +9,19 @@ USAGE:
 #include <iostream>
 #include <curl/curl.h>
 #include <nlohmann/json.hpp>
+#include <fstream>
 
 using json = nlohmann::json;
 int main(int argc, char *argv[]){
+	std::ifstream data("database.json");
+	json output= json::parse(data)
 	if (argc==6){
 		std::string username = argv[1];
 		std::string ipaddress = argv[2];
 		std::string useragent = argv[3];
 		std::string city = argv[4];
 		std::string country = argv[5];
-
+		
 
 
 	}else{
