@@ -27,13 +27,16 @@ namespace
 using namespace  std;
 using json = nlohmann::json;
 int main(int argc, char *argv[]){
-	std::ifstream data("database.json");
-	json output= json::parse(data);
-	if (argc==4){
+	
+	if (argc==5){
 		std::string username = argv[1];
 		std::string ipaddress = argv[2];
 		std::string useragent = argv[3];
-		//std::string city = argv[4];
+		std::string apikey = argv[4];
+		string filename = apikey+".json";
+		std::ifstream data1(filename);
+		
+		json output= json::parse(data1);
 		//std::string country = argv[5];
 		string url = "http://ip-api.com/json/"+ipaddress;
 
@@ -56,7 +59,7 @@ int main(int argc, char *argv[]){
 		json data = {{"username",username},{"ipaddress",ipaddress},{"useragent",useragent},{"city",city},{"country",country}};
 		output["views"].push_back(data);
 		cout<<output.dump(4)<<"\n";
-		ofstream fileout("database.json");
+		ofstream fileout(filename);
 
 		fileout<<output.dump(4);
 		fileout.close();
