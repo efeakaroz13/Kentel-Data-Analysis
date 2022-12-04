@@ -18,17 +18,31 @@
 	  </a>
 	</nav><br><br>
 	<div class="container">
+		{% if error==True %}
 		<center>
 			<h3 style="font-family: 'IBM Plex Sans JP', sans-serif;">SignIn</h3>
 			<div class="login">
 				<form action="" method="POST">
-					<input type="email" class="form-control" name="email" placeholder="Enter your email"><br>
+					<input type="email" class="form-control" style="border:1px solid red;" name="email" value="{{email}}" placeholder="Enter your email"><br>
+					<input type="password" class="form-control" style="border:1px solid red" name="password" placeholder="Enter your password"><br>
+					<button class="btn btn-outline-dark">Log in</button>
+				</form>
+			</div>
+
+		</center>
+		{% else %}
+		<center>
+			<h3 style="font-family: 'IBM Plex Sans JP', sans-serif;">SignIn</h3>
+			<div class="login">
+				<form action="" method="POST">
+					<input type="email" class="form-control" name="email" value="{{email}}" placeholder="Enter your email"><br>
 					<input type="password" class="form-control" name="password" placeholder="Enter your password"><br>
 					<button class="btn btn-outline-dark">Log in</button>
 				</form>
 			</div>
 
 		</center>
+		{% endif %}
 	</div>
 </body>
 </html>

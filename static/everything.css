@@ -5,3 +5,58 @@
 .form-control{
 	width:80%;
 }
+@media screen and (min-width: 700px) {
+	.card{
+
+		transition:0.5s;
+		float: left;
+		margin: 5px;
+		padding: 10px 3px;
+		width: 30%;
+		
+	}
+	.card:hover{
+		box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+		transition:0.5s;
+		border-radius: 1px;
+	}
+	
+	
+	.container {
+		display: block;
+		width: 100%;
+	}
+	  
+	  
+	.container .card:first-child {
+	margin-left: 0;
+	}
+	
+	
+	/*last element of the first row*/
+	
+	.container .card:nth-child(5n) {
+	margin-right: 0;
+	}
+	
+	
+	/*first-element of the 2nd row*/
+	
+	.container .card:nth-child(5n+1) {
+	margin-left:10px;
+	}
+	
+	
+	/*last element*/
+	
+	.container .card:last-child {
+	margin-right: 0;
+	}
+}
+@media screen and (max-width: 700px) {
+	.card{
+		width:70%;
+		margin:20px;
+
+	}
+}

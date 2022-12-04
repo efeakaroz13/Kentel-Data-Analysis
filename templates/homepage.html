@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kentel Data Analyser</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/static/everything.css">
+</head>
+<body>
+	<nav class="navbar " style="border-bottom:1px solid #e3e3e3;">
+	  <a class="navbar-brand" href="/">
+	    <img src="/static/alpha.png" style="margin-left:20px;margin-right: 20px;" width="30" height="30" class="d-inline-block align-top" alt="">
+	    Kentel Analytics
+	  </a>
+	</nav><br><br>
+	<div class="container">
+		<center>
+            <h2>{{fullname}}'s  Projects</h2>
+        
+        {% if data["projects"] %}
+        {% else %}
+            <div class="card"  >
+                <img class="card-img-top" src="/static/noproject.png" width="50" alt="No project">
+                <div class="card-body">
+                    <h5 class="card-title">No projects</h5>
+                    <p class="card-body">You didn't create any project yet.</p>
+                </div>
+            </div>
+        {% endif %}
+        <div class="card"  onclick="window.location.assign('/createproject')">
+            <img class="card-img-top" src="/static/createp.png" width="50" alt="No project">
+            <div class="card-body">
+                <h5 class="card-title">Create a project</h5>
+                <p class="card-body">Click here to create a project</p>
+            </div>
+        </div>
+        
+        
+
+    </center>   
+
+	</div>
+</body>
+</html>
